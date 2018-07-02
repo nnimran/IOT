@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arduino Yun</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/custom.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script type="text/javascript">
+
+$(document).ready(function (){
+
+var googleSpreadsheetID ="1t4da-266iFcJCPi-BbMmlEpoYdDDodivfeMMgsYx5Yo";
+
+var workSheet ="o3jjhzj";
+var url="https://spreadsheets.google.com/feeds/list/" +googleSpreadsheetID + "/" + workSheet + "/public/values?alt=json";
+
+$.getJSON(url,function(data){
+//Get all entries from the google sheet
+var entries = data.feed.entry;
+var mySheet = [];
+
+//Store cell data into an array
+for(var i=0;i<entries.length;i++){
+
+mySheet[i]={
+"field1" : entries[i].gsx$temperature.$t,
+"field2" : entries[i].gsx$humidity.$t,
+"field3" : entries[i].gsx$timestamp.$t,
+}
+}
+
+//Display
+var html ="<table>"+
+    "<tr><th> Temperature *C </th><th> Humidity % </th><th> Timestamp</th></tr>";
+
+for(var i=0; i< mySheet.length; i++){
+
+html+="<tr><td>"+ mySheet[i].field1 +
+      "</td><td>"+ mySheet[i].field2 +
+    "</td><td>"+ mySheet[i].field3 +	"</td></tr>";
+}
+
+//$("div").html(html + "</table>");
+$("#div1").html(html + "</table>");
+}); //endof getJSON
+
+})
+</script>
+
+
+<style type="text/css">
+table,tr,th,td{
+border:1px solid black;
+padding: 15px;
+}
+</style>
+
+  <style>
+  body {
+      position: relative;
+  }
+  #section1 {padding-top:50px;height:700px;color: #fff;}
+  #section2 {padding-top:50px;height:700px;color: #fff;}
+  #section3 {padding-top:50px;height:700px;color: #fff;}
+  #section4 {padding-top:50px;height:660px;color: #fff;}
+
+  </style>
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<!-- Header Start -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Index.html">Home</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="DataCollected.html">Data Collected</a></li>
+          <li><a href="Charts.html">Charts</a></li>
+          <li><a href="Gallery.html">Gallery</a></li>
+          <li><a href="References.html">References</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Header End -->
+
+<br><br><br>
+<center>
+<h4>Entire Temperature and Humidity Data Collected</h4>
+<div id="div1"></div>
+</center>
+
+
+<!-- Footer Start -->
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-copyright-mark"></span> Deakin</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Footer Ends -->
+
+</body>
+</html>

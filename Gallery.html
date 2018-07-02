@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arduino Yun</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/custom.js"></script>
+
+  <style>
+  body {
+      position: relative;
+  }
+  #section1 {padding-top:50px;height:700px;color: #fff;}
+  #section2 {padding-top:50px;height:700px;color: #fff;}
+  #section3 {padding-top:50px;height:700px;color: #fff;}
+  #section4 {padding-top:50px;height:660px;color: #fff;}
+  </style>
+
+
+  <style>
+  div.gallery {
+      margin: 5px;
+      border: 1px solid #756a6a;
+      display: inline-block;
+      width: 800px;
+
+  }
+
+  div.gallery:hover {
+      border: 1px solid #777;
+  }
+
+  div.gallery img {
+      width: 300px;
+      height: 400px;
+  }
+
+  div.desc {
+      padding: 15px;
+      text-align: center;
+      color: black;
+  }
+  </style>
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<!-- Header Start -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Index.html">Home</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="DataCollected.html">Data Collected</a></li>
+          <li><a href="Charts.html">Charts</a></li>
+          <li><a href="Gallery.html">Gallery</a></li>
+          <li><a href="References.html">References</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Header End -->
+<!-- Section Start -->
+<div id="section1" class="container-fluid">
+  <!-- about section -->
+  <section class="about text-center" id="about">
+    <div class="container">
+      <div class="row">
+
+<div class="gallery">
+  <a target="_blank" href="img/ArduinoReading.png">
+    <img src="img/ArduinoReading.png" width="300" height="200">
+  </a>
+  <div class="desc">Arduino Code to calculate temperature and Humidity Data using DHT32 Sensor</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img/ArduinoConsole.png">
+    <img src="img/ArduinoConsole.png" width="600" height="400">
+  </a>
+  <div class="desc">Arduino terminal displaying temperature and humidity value captured</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img/GoogleAPI.png">
+    <img src="img/GoogleAPI.png" width="600" height="400">
+  </a>
+  <div class="desc">Provide permission to the google spreadsheet document by using Google API Manager</div>
+</div>
+
+
+<div class="gallery">
+  <a target="_blank" href="img/TembooChoreos.png">
+    <img src="img/TembooChoreos.png" width="600" height="400">
+  </a>
+  <div class="desc">Temboo choreos Selected for project</div>
+</div>
+
+
+<div class="gallery">
+  <a target="_blank" href="img/TembooOathInitialize.png">
+    <img src="img/TembooOathInitialize.png" width="600" height="400">
+  </a>
+  <div class="desc">Temboo choreos for Google Oath Initialization</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img/TembooOathFinalize.png">
+    <img src="img/TembooOathFinalize.png" width="600" height="400">
+  </a>
+  <div class="desc" style="margin-bottom: 40px;">Temboo choreos for Google Oath Finalization</div>
+</div>
+
+
+
+
+      </div>
+    </div>
+  </section><!-- end of about section -->
+</div>
+
+
+<!-- Footer Start -->
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-copyright-mark"></span> Deakin</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Footer Ends -->
+
+</body>
+</html>
